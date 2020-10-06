@@ -1,25 +1,25 @@
 
 <img src="images/python-logo.png" width="50" height="50"></img>
 
-# Fundamentals of Programming.
-## Python Environment.
-### Testing the system.
+# Validation Exercises.
+## Fundamentals of Programming.
+### General Instructions.
 
-The aims of this session are to ensure that the system is working and that you are familiar with how to use the system.
-
-* Open the main.py file.
-* Press the green run button (top right corner of the screen) to execute the program.
-* Press the debug button to step through the program line by line.
-* In the editor, add the follwoing line at the top of the code
-
-```python
-# Name: <Insert Your name>
-```
-
-* Run the program again to ensure that it still works.
-* In the terminal window (at teh bottom of the editor, type
-
+To test your files, type
 ```bash
-./submit.sh
+./test.sh
 ```
+
+To commit your files,type
+```bash
+./commit.sh
+```
+
+### Exercise 1
+
+Edit the file, ex1.py to:
+* Ask the user to "Enter a valid age.".
+* A valid age is an integer value greater than or equal to 14 and less than 110.
+* If the use enters an invalid age, output "Invalid age." then ask the user to "Enter a valid age."
+* Once the user has entered a valid age, output "Welcome."
 

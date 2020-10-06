@@ -57,20 +57,19 @@ class TestEngine:
         
 
     
-class StarterTestEngine (TestEngine):
+class Exercise1TestEngine (TestEngine):
 
     def __init__(self):
         super().__init__();
 
-    def test_starter_1(self): 
-        user_input="Hello World"    
-        result = run(["python", "starter.py"], input=b"Hello World\n", capture_output=True)
-        print(result)
-        expected = b'Enter a word.The first letter is H\nThe last letter is d\n'
+    def test_1(self): 
+            
+        result = run(["python", "ex1.py"], input=b"13\n14\n", capture_output=True)
+        expected = b'Enter a valid age.Invalid age.\nEnter a valid age.Welcome.\n'
         self.assertEqual(expected,  result.stdout, "\nExpected:\n{0}\nReceived:\n{1}".format(expected, result.stdout))
 
     def run(self):
-        self.runTest(self.test_starter_1)
+        self.runTest(self.test_1)
         #self.runTest(self.test_starter_2)
 
         return self.results
@@ -116,7 +115,7 @@ def textRed():
     print(u"\u001b[31m")
 
 def createTestSuite ():
-    engine = StarterTestEngine()
+    engine = Exercise1TestEngine()
 
     results = engine.run()
 
