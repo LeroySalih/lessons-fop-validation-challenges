@@ -62,15 +62,21 @@ class Exercise1TestEngine (TestEngine):
     def __init__(self):
         super().__init__();
 
-    def test_1(self): 
+    def ex1_test_1(self): 
             
         result = run(["python", "ex1.py"], input=b"13\n14\n", capture_output=True)
         expected = b'Enter a valid age.Invalid age.\nEnter a valid age.Welcome.\n'
         self.assertEqual(expected,  result.stdout, "\nExpected:\n{0}\nReceived:\n{1}".format(expected, result.stdout))
 
+    def ex1_test_2(self): 
+            
+        result = run(["python", "ex1.py"], input=b"110\n109\n", capture_output=True)
+        expected = b'Enter a valid age.Invalid age.\nEnter a valid age.Welcome.\n'
+        self.assertEqual(expected,  result.stdout, "\nExpected:\n{0}\nReceived:\n{1}".format(expected, result.stdout))
+
     def run(self):
-        self.runTest(self.test_1)
-        #self.runTest(self.test_starter_2)
+        self.runTest(self.ex1_test_1)
+        self.runTest(self.ex1_test_2)
 
         return self.results
 
